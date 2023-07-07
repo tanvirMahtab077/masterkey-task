@@ -9,7 +9,7 @@ export default function HotProducts() {
         const result = await axios.get(url);
         if (result) {
           const products = result.data.products[0].productData
-          const filteredProducts = products.filter(hotProduct=> hotProduct.product_type = 'hot deals for you')
+          const filteredProducts = products.filter(hotProduct=> hotProduct.product_type == 'hot deals for you')
           setHotProducts(filteredProducts);
         }
       } catch (err) {
